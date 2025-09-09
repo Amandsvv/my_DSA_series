@@ -1,7 +1,3 @@
-Here’s a polished `README.md` you can use for your **`my_dsa_series`** GitHub repository 👇
-
----
-
 # 📚 My DSA Series (C++ Practice)
 
 This repository contains my **Data Structures and Algorithms (DSA) practice in C++**, while following along with **Shradha Khapra Ma’am’s DSA Series on YouTube**.
