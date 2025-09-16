@@ -28,10 +28,42 @@ int minCost(vector<int> A){
             return A[1];
         }
     }
-    
+    int i = findIdx(A),costCal = 0;
+    cout<<"start Index : "<<i<<endl;
+
+    while(i<n){
+        costCal += A[i];
+
+        if(A[i] + A[i+1] < A[i]+A[i+2]){
+            if(i + 1 >= n){
+                break;
+            }
+            i+=1;
+        }else {
+            if(i + 2 >= n){
+                break;
+            }
+            i+=2;
+        }
+        cout<<"Steps : "<<i<<endl;
+    }
+    return costCal;
+}
+
+int minCost2(vector<int>A){
+    int n = A.size();
+    vector<int> dp(n);
+
+    int i = n-1;
+
+    while(i >=0){
+        dp[i] = A[i] + min(dp[i+1], dp[i+2]);
+    }
+
+    return min(dp[0],dp[1]);
 }
 int main(){
 
-    vector<int> num = {10,15,20};
-    cout<<minCost(num);
+    vector<int> num = {0,1,2,2};
+    cout<<minCost2(num);
 }

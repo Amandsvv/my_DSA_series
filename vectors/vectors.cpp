@@ -4,13 +4,8 @@
 
 using namespace std;
 
-int main()
+bool isValidSentence(string s)
 {
-    vector<int> A = {1, 2, 3, 4};
-
-    A.erase(A.begin() + 1);
-    string s = "A man, a plan, a canal: Panama";
-    cout<<s<<endl;;
     string alphaNumeric = "";
 
     for (int i = 0; i < s.size(); i++)
@@ -26,15 +21,34 @@ int main()
         }
     }
 
-    int i = 0, k = alphaNumeric.size()-1;
+    int i = 0, k = alphaNumeric.size() - 1;
 
-        while(i < k){
-            if(alphaNumeric[i++] != alphaNumeric[k--]){
-                cout<<"false";
-                break;
-            }
+    while (i < k)
+    {
+        if (alphaNumeric[i++] != alphaNumeric[k--])
+        {
+            cout << "false";
+            break;
         }
+    }
 
-        cout<<"True";
+    return true;
+}
+int main()
+{
+    vector<int> A = {1, 2, 3, 4};
+    vector<int>:: iterator itr;
+    vector<int>:: reverse_iterator it;
+
+    for(itr = A.begin() ; itr != A.end(); itr++ ){
+        cout<<*(itr)<<" ";
+    }
+    cout<<endl;
+
+    for(auto it = A.rbegin(); it!= A.rend(); it++){
+        cout<<&(*it)<<" ";
+    }
+    cout<<endl;
+
     return 0;
 }
