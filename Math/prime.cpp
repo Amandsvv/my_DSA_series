@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<cmath>
 
 using namespace std;
 
@@ -35,6 +36,6 @@ int main(){
 
     cout<< isPrime(n)<<endl;
     cout<<"No. of Prime within the Given number is : "<<count(n)<<endl;
-    
+    cout<<"Count of Digits in given number is : "<<(int)(log10(n) + 1)<<endl;
     return 0;
 }
