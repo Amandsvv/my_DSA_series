@@ -15,8 +15,19 @@ void print(int n){
     cout << n << " "; 
 }
 
+int fib(int n){
+    if(n == 0 || n == 1){
+        return n;
+    }
+
+    return fib(n-1) + fib(n-2);
+}
+
 int main(){
     cout<<"Sum = "<<sumN(5)<<endl; // In main calling the recursive function
     print(5);
+    cout<<endl;
+    cout<<"Sum of fibonacci until 5th term : "<<fib(7)<<endl;
+
     return 0;
 }
