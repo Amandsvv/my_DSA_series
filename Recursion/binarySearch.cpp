@@ -7,9 +7,9 @@ bool isFound(vector<int> arr, int low, int high, int tar){
     int mid = low + (high - low) /2; // Calculating Mid Point
     if(arr[mid] == tar){ // Checking is mid value is target
         return true; // if yes returning true as found
-    }else if(arr[mid] > tar){
+    }else if(arr[mid] > tar){ // if mid value is greater the left part may have the tar
         isFound(arr,low,mid-1,tar);
-    }else{
+    }else{//else the right may have the target
         isFound(arr,mid+1,high,tar);
     }
 }
