@@ -4,14 +4,14 @@
 
 using namespace std;
 void selectionSort(int nums[], int n){
-    for(int i =0; i<n-1; i++){
-        int smallestI = i;
-        for(int j = i+1; j < n; j++){
-            if(nums[j] < nums[smallestI]){
-                smallestI = j;
+    for(int i = 0; i<n-1; i++){ // less than a size of nums we will iterate the top loop
+        int smallestI = i; // storing current idx where the smallest value get stored;
+        for(int j = i+1; j < n; j++){ // iterating eith next element of current
+            if(nums[j] < nums[smallestI]){ // iteratively checking which is the smallest value idx
+                smallestI = j; //storing the smallest idx 
             }
         }
-        swap(nums[i], nums[smallestI]);
+        swap(nums[i], nums[smallestI]); // swap at the end -> results : smalleset value at first
     }
 }
 
@@ -26,17 +26,6 @@ int main(){
 
     int nums[] = {1,4,2,5,2,6,8,7,0};
     int n = 9;
-
-    // for(int i = 0; i < n-1; i++){
-    //     for(int j = 0; j < n-i-1; j++){
-    //         if(nums[j] > nums[j+1]){
-    //             int temp = nums[j];
-    //             nums[j] = nums[j+1];
-    //             nums[j+1] = temp;
-    //         }
-    //     }
-    // }
-
     selectionSort(nums,n);
     printArr(nums,n);
 
